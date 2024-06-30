@@ -5,7 +5,7 @@ import os
 
 app = Flask(__name__)
 
-# MySQL configurations
+
 db_config = {
     'host': 'localhost',
     'user': 'root',
@@ -39,7 +39,7 @@ def submit_order():
     address = request.form['address']
     message = request.form.get('message', '')
 
-    # Insert data into MySQL
+
     cursor = connection.cursor()
     sql = """
         INSERT INTO orders (name, phone_number, order_name, additional_food, quantity, order_date_time, address, message)
